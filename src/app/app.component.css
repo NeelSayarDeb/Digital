@@ -1,0 +1,27 @@
+.logo{
+    height: 40px;
+}
+
+.body{
+    
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 1%
+}
+
+.redLine{
+    display: inline-block;
+    height: 35px;
+    margin-left: 6px;
+    width: 5px;
+    background-color: red;
+}
+
+.digital{
+        display: inline-block;
+        font-size: 30px;
+        color: #ffffff;
+        vertical-align: super;
+        margin-left: 6px;
+        font-family: sans-serif;
+}
