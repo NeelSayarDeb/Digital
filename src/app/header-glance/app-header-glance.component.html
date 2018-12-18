@@ -25,8 +25,8 @@
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText total-orders">
-{{currentResponse.total_orders}}
+      <p class="valueText">
+{{currentResponse?.total_orders}}
       </p>
     </div>
   </div>
@@ -39,8 +39,8 @@
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText planned-revenue">
-${{currentResponse.demand_amount}}
+      <p class="valueText">
+${{currentResponse?.demand_amount}}
       </p>
     </div>
   </div>
@@ -53,8 +53,8 @@ ${{currentResponse.demand_amount}}
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText actual-revenue">
-${{currentResponse.fulfilled_amount}}
+      <p class="valueText">
+${{currentResponse?.fulfilled_amount}}
       </p>
     </div>
   </div>
@@ -91,8 +91,8 @@ ${{currentResponse.fulfilled_amount}}
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText abandon">
-{{currentResponse.cancelled_orders}}
+      <p class="valueText">
+{{currentResponse?.cancelled_orders}}
       </p>
     </div>
   </div>
