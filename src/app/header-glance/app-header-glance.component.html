@@ -20,12 +20,12 @@
 <div class="widthBox">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="dateText">
+      <p class="dateText ">
         TOTAL ORDERS
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText">
+      <p class="valueText total-orders">
 {{currentResponse.total_orders}}
       </p>
     </div>
@@ -39,7 +39,7 @@
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText">
+      <p class="valueText planned-revenue">
 ${{currentResponse.demand_amount}}
       </p>
     </div>
@@ -53,7 +53,7 @@ ${{currentResponse.demand_amount}}
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText">
+      <p class="valueText actual-revenue">
 ${{currentResponse.fulfilled_amount}}
       </p>
     </div>
@@ -91,7 +91,7 @@ ${{currentResponse.fulfilled_amount}}
       </p>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-      <p class="valueText">
+      <p class="valueText abandon">
 {{currentResponse.cancelled_orders}}
       </p>
     </div>
