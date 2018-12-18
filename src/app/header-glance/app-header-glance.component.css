@@ -5,9 +5,10 @@
 
 .date{
     color: red;
-    font-size: 24px;
+    font-size: 30px;
     text-align: center;
         margin-bottom: 0;
+        font-weight: 600;
 }
 
 .widthBox{
