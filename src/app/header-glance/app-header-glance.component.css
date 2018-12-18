@@ -1,0 +1,23 @@
+.glance-box{
+    background-color: #484848;
+    width: 100%
+}
+
+.date{
+    color: red;
+    font-size: 24px;
+    text-align: center;
+        margin-bottom: 0;
+}
+
+.widthBox{
+    width: 14.27%
+}
+
+
+.text{
+color: #ffffff;
+font-size: 16px;
+text-align: center;
+margin-bottom: 0;
+}
