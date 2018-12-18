@@ -1,8 +1,8 @@
 import {
-    Component,
-    ChangeDetectionStrategy,
+    Component, ChangeDetectionStrategy,
     ViewChild,
-    TemplateRef
+    TemplateRef,
+    ViewEncapsulation
 } from '@angular/core';
 import {
     startOfDay,
@@ -43,7 +43,8 @@ const colors: any = {
 @Component({
     selector: 'app-calendar',
     templateUrl: './app-calendar.component.html',
-    styleUrls: ['./app-calendar.component.css']
+    styleUrls: ['./app-calendar.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class AppCalendarComponent {
     isExpand: boolean = false;
@@ -71,7 +72,7 @@ export class AppCalendarComponent {
         {
             label: '<i class="fa fa-fw fa-times"></i>',
             onClick: ({ event }: { event: CalendarEvent }): void => {
-                this.events = this.events.filter(iEvent => iEvent !== event);
+                //this.events = this.events.filter(iEvent => iEvent !== event);
                 this.handleEvent('Deleted', event);
             }
         }
@@ -81,43 +82,36 @@ export class AppCalendarComponent {
 
     events: CalendarEvent[] = [
         {
-            start: subDays(startOfDay(new Date()), 1),
-            end: addDays(new Date(), 1),
-            title: 'A 3 day event',
-            color: colors.red,
-            actions: this.actions,
-            allDay: true,
-            resizable: {
-                beforeStart: true,
-                afterEnd: true
-            },
-            draggable: true
-        },
-        {
             start: startOfDay(new Date()),
-            title: 'An event with no end date',
-            color: colors.yellow,
+            title: 'FULFILLED: $432231.34',
+            color: colors.red,
             actions: this.actions
         },
         {
-            start: subDays(endOfMonth(new Date()), 3),
-            end: addDays(endOfMonth(new Date()), 3),
-            title: 'A long event that spans 2 months',
-            color: colors.blue,
-            allDay: true
-        },
-        {
-            start: addHours(startOfDay(new Date()), 2),
-            end: new Date(),
-            title: 'A draggable and resizable event',
+            start: startOfDay(new Date()),
+            title: 'DEMAND: $2095.45',
             color: colors.yellow,
-            actions: this.actions,
-            resizable: {
-                beforeStart: true,
-                afterEnd: true
-            },
-            draggable: true
+            actions: this.actions
         }
+        // {
+        //     start: subDays(endOfMonth(new Date()), 3),
+        //     end: addDays(endOfMonth(new Date()), 3),
+        //     title: 'A long event that spans 2 months',
+        //     color: colors.blue,
+        //     allDay: true
+        // },
+        // {
+        //     start: addHours(startOfDay(new Date()), 2),
+        //     end: new Date(),
+        //     title: 'A draggable and resizable event',
+        //     color: colors.yellow,
+        //     actions: this.actions,
+        //     resizable: {
+        //         beforeStart: true,
+        //         afterEnd: true
+        //     },
+        //     draggable: true
+        // }
     ];
 
     activeDayIsOpen: boolean = true;
@@ -152,21 +146,6 @@ export class AppCalendarComponent {
     handleEvent(action: string, event: CalendarEvent): void {
         this.modalData = { event, action };
        // this.modal.open(this.modalContent, { size: 'lg' });
-    }
-
-    addEvent(): void {
-        this.events.push({
-            title: 'New event',
-            start: startOfDay(new Date()),
-            end: endOfDay(new Date()),
-            color: colors.red,
-            draggable: true,
-            resizable: {
-                beforeStart: true,
-                afterEnd: true
-            }
-        });
-        this.refresh.next();
     }
 
     collapseExpand(){
