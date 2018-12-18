@@ -10,6 +10,7 @@ export class AppHeaderGlanceComponent {
     public month;
     public monthValue;
     public year;
+    
     ngOnInit(){
         let d = new Date();
         this.date = d.getDate();
@@ -56,4 +57,5 @@ export class AppHeaderGlanceComponent {
         }
         this.year = d.getFullYear();
     }
+    
 }
