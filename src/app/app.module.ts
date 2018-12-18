@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
+import { AppHeaderGlanceComponent } from './header-glance/app.header-glance.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppHeaderGlanceComponent
   ],
   imports: [
     BrowserModule
