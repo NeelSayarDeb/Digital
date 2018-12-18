@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderDataService } from './../services/header-data.service';
 
 @Component({
     selector: 'app-header-glance',
@@ -8,13 +9,20 @@ import { Component } from '@angular/core';
 export class AppHeaderGlanceComponent {
     public date;
     public month;
+    public monthNum;
     public monthValue;
     public year;
-    
+    public response: any;
+    public currentResponse: any;
+    public currentMonth;
+    public dateToday;
+    constructor(private headerDataService: HeaderDataService) {}
+
     ngOnInit(){
         let d = new Date();
         this.date = d.getDate();
         this.monthValue = d.getMonth();
+        this.monthNum = this.monthValue + 1;
         switch (this.monthValue) {
             case 0:
                 this.month = "Jan"
@@ -56,6 +64,26 @@ export class AppHeaderGlanceComponent {
                 break;
         }
         this.year = d.getFullYear();
+        //12/1/2018
+        this.dateToday =  this.monthNum + "/" + this.date + "/"+ this.year;
+        this.loadMonthData();
+
+    }
+
+    loadMonthData() {
+        this.headerDataService.dataForCurrentMonth()
+            .subscribe(
+                (response) => {
+                    this.response = response;
+                    for (let i = 0; i < this.response.daysList.length; i++){
+                        if (this.response.daysList[i].report_dt == this.dateToday){
+                            this.currentResponse = this.response.daysList[i]
+                        }
+                    }
+                },
+                (error) => console.log(error)
+            );
+
     }
     
 }

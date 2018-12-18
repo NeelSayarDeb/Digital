@@ -15,6 +15,14 @@
     width: 14.27%
 }
 
+.valueText{
+    color: green;
+    font-size: 20px;
+   float: left;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
 .dateText{
     color: #ffffff;
     font-size: 14px;
